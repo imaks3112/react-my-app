@@ -28,12 +28,7 @@ export default function Navbar(props) {
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="/">
-                  Features
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="/">
-                  Pricing
+                  About Us
                 </a>
               </li>
             </ul>

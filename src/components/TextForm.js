@@ -7,20 +7,24 @@ export default function TextForm(props) {
 
   const clickForUppercase = () => {
     setText(text.toUpperCase());
+    props.alert('Converted to uppercase !', 'success');
   };
   
   const clickForLowercase = () => {
     setText(text.toLowerCase());
+    props.alert('Converted to lowercase !', 'success');
   }
 
   const clickForTitlecase = () => {
     setText(text.toLowerCase().split(' ').map(function (word) {
       return word.charAt(0).toUpperCase().concat(word.substr(1));
     }).join(' '))
+    props.alert('Converted to titlecase !', 'success');
   }
 
   const clickForClear = () => {
     setText('');
+    props.alert('Please enter something to show', 'warning');
   }
 
   const [text, setText] = useState('Hi I am Akshay here. I am a Software Engineer.');
@@ -51,7 +55,7 @@ export default function TextForm(props) {
           <h1>Your Text summary</h1>
         </div>
         <div className="card-body">
-          <p>{text.split(" ").length} words and {text.length} characters</p>
+          <p>{text.split(" ").length-1} words and {text.length} characters</p>
           <p>{0.008 * text.split(" ").length} minutes for read</p>
         </div>
       </div>
