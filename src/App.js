@@ -24,7 +24,19 @@ function App() {
     }, 1000);
   };
 
-  const toggleMode = () => {
+  const removeClass = () => {
+    document.body.classList.remove('bg-primary');
+    document.body.classList.remove('bg-danger');
+    document.body.classList.remove('bg-success');
+    document.body.classList.remove('bg-warning');
+    document.body.classList.remove('bg-secondary');
+    document.body.classList.remove('bg-light');
+  }
+
+  const toggleMode = (cls) => {
+    removeClass();
+    document.body.classList.add('bg-'+cls);
+
     if (mode === "light") {
       setMode("dark");
       document.body.style.backgroundColor = "#083456";
@@ -42,7 +54,7 @@ function App() {
         <Navbar title="Text utils title" mode={mode} toggleMode={toggleMode} />
         <Alert alert={alert} />
 
-        <div className="container my-3">
+        <div className="container my-5">
           <Routes>
             <Route exact path="/"
               element={
